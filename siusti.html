@@ -17,14 +17,14 @@
             background-color: lightgray;
         }
         button{
-            width: 150px;
+            width: 250px;
             height: 50px;
             border: none;
             outline: none;
             border-radius: 15px;
-            background-color: lightcoral;
+            background-color: darkseagreen;
             font-size: 25px;
-            margin-top: 550px;
+            margin-top: 15px;
         }
         @keyframes atsiranda{
             0%{
@@ -69,8 +69,17 @@
         <h1>Kraunasi...</h1>
     </div>
     <h1>Paštomatų sistema</h1>
-    <form action="pasirinkimas.html">
-    <button>Pradėti</button>
-        </form>
+    <p>Spausdinamas siuntos lipdukas...</p>
+    <p>Prašome palaukti...</p>
+    <div style="width: 25%; height: 5px; background-color: black; position: absolute; animation-name: juda; animation-iteration-count: infinite; animation-duration: 1s; animation-timing-function: linear; top: 55%;"></div>
+
+    <button style="margin-top: 470px; background-color: lightcoral;" onclick="grizti()">Grįžti</button>
+    <script>
+        setTimeout(() => {  location.replace("uzklijuoti.html"); }, 15000);
+        function grizti()
+        {
+                    location.replace("pasirinkimas.html");
+        }
+    </script>
 </body>
 </html>
