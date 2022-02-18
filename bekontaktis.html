@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mokėjimas kortele</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body style="overflow: hidden;">
+    <style>
+        @keyframes pasukti{
+            0%{
+                transform: rotate(0);
+            }
+            100%{
+                transform: rotate(-90deg);
+            }
+        }
+        @keyframes opacity{
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        .loader{
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: 5px solid darkgray;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid lightgray;
+    border-right: 5px solid lightgray;
+    animation-name: sukasi, opacity;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0s, 2.5s;
+    position: absolute; 
+    top: -90px; 
+    right: 68px;
+    opacity: 0;
+}
+@keyframes sukasi{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+    </style>
+    <div id="ok" style="display: none; opacity: 0; transition: 0.3s; justify-content: center; align-items: center; width: 100%; height: 100%; position: absolute; animation: none; border: none; z-index: 20; bottom: 0; top: 0; left: 0; right: 0; background-color: aliceblue;"><div style="width: 100px; height: 100px; border-radius: 100%; border: 2px solid green; background-color: darkseagreen; display: flex; justify-content: center; align-items: center; margin: 10px auto; font-size: 30px; ">ok</div></div>
+    <img src="kortele.png" alt="" style="width: 75px;">
+    <h1>Mokėjimas kortele</h1>
+    <p>Visa, Mastercard, Maestro</p>
+    <p>&copy; Kortelių apmokėjimas FINBONK Bank</p>
+    <b><p>Bekontaktis apmokėjimas...</p></b>
+    <div class="div" style="background-color: lightgoldenrodyellow; position: relative; border-radius: 10px; animation-name: pasukti; transform: rotate(-90deg); animation-iteration-count: 1;"><p style="transform: rotate(90deg); position: absolute; right: -40px; top: 50px;">Banko kortelė</p><p style="transform: rotate(90deg); position: absolute; top: 75px; left: -60px;">VARDENIS PAVARDENIS</p><p style="transform: rotate(90deg); position: absolute; top: 75px; left: -35px;">1234 5678 9123 4567</p><p style="transform: rotate(90deg); position: absolute; right: -43px; bottom: 55px;">&copy; FINBONK Bank</p><p style="transform: rotate(90deg); position: absolute; left: 7px; bottom: 25px;">07/25</p><img src="kortele.png" alt="" style="width: 40px; border-radius: 100%; transform: rotate(90deg); position: absolute; top: 5px; right: 60px;"><div class="loader" id="loader"></div></div>
+    <div style="width: 100%; height: 20px; position: absolute; top: 200px; left: 0; right: 0; display: flex; justify-content: center; align-items: center; border: none; animation: none;" id="divukas"><div style="width: 50px; height: 20px; background-color: greenyellow; border: none; animation-name: opacity; opacity: 0; animation-duration: 0.5s; animation-timing-function: linear;"></div><div style="width: 50px; height: 20px; background-color: greenyellow; border: none; animation-name: opacity; opacity: 0; animation-duration: 0.5s; animation-timing-function: linear; animation-delay: 0.3s;"></div><div style="width: 50px; height: 20px; background-color: greenyellow; border: none; animation-name: opacity; opacity: 0; animation-duration: 0.5s; animation-timing-function: linear; animation-delay: 0.6s;"></div><div style="width: 50px; height: 20px; background-color: greenyellow; border: none; animation-name: opacity; opacity: 0; animation-duration: 0.5s; animation-timing-function: linear; animation-delay: 0.9s;"></div></div>
+    <audio controls autoplay style="opacity: 0;">
+        <source src="beep.wav" type="audio/wav" style="opacity: 0;">
+      </audio>
+    <script>
+        setTimeout(() => {
+            document.getElementById("divukas").style.display = "none";
+        }, 5000);
+        setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+        }, 5000);
+        setTimeout(() => {
+            document.getElementById("ok").style.opacity = "1";
+        }, 4900);
+        setTimeout(() => {
+            document.getElementById("ok").style.display = "flex";
+        }, 4800);
+        setTimeout(() => {
+            location.replace("siusti.html");
+        }, 8000);
+    </script>
+</body>
+</html>
