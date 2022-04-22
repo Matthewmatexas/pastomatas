@@ -152,7 +152,8 @@
     <p id="pin">Įveskite siuntos numerį:</p>
     <form>
         <p id="pin-n" style="display: none; color: red;">Siuntos numeris nėra registruotas</p>
-        <input type="text" style="width: 90%; height: 50px; font-family: IBM Plex Sans; font-size: 25px; text-align: center;" name="pin" placeholder="LS0000000000--">
+        <input type="text" style="width: 90%; height: 50px; font-family: IBM Plex Sans; font-size: 25px; text-align: center; border: 2px solid black;" name="pin" placeholder="0000000000CC" maxlength="12">
+        <p style="position: absolute; top: 108.5px; left: 30px; font-size: 25px; background-color: white; padding-left: 15px; padding-right: 15px;">LS</p>
         <div class="lds-spinner" style=" margin: 0 auto; margin-top: 8px; display: none;" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         <button type="button" class="btn-login" onclick="check(this.form)" style="top: 200px;" id="toliau">Toliau</button>
         
@@ -184,7 +185,7 @@
         setTimeout(() => {  location.replace("pasirinkimas.html"); }, 62000);
         function check(form)
         {
-            if(form.pin.value == "LS8573928472LT")
+            if(form.pin.value == "hfhdchdbjdnidnsdnfjsnfjnflbdjndjnfkdnf")
                 {
                     document.getElementById("pin").style.display = "block";
                 document.getElementById("pin-n").style.display = "none";

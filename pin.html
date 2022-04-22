@@ -151,7 +151,7 @@
     <p id="pin">Įveskite PIN kodą:</p>
     <form>
         <p id="pin-n" style="display: none; color: red;">PIN kodas netinka</p>
-        <input type="number" style="width: 90%; height: 50px; font-family: IBM Plex Sans; font-size: 25px; text-align: center;" name="pin">
+        <input type="text" style="width: 90%; height: 50px; font-family: IBM Plex Sans; font-size: 25px; text-align: center;" name="pin" placeholder="000000" maxlength="6">
         <div class="lds-spinner" style=" margin: 0 auto; margin-top: 8px; display: none;" id="loader"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
         <button type="button" class="btn-login" onclick="check(this.form)" style="top: 200px;" id="toliau">Toliau</button>
         
@@ -183,7 +183,7 @@
         setTimeout(() => {  location.replace("pasirinkimas.html"); }, 38000);
         function check(form)
         {
-            if(form.pin.value == "999999")
+            if(form.pin.value == "admnCodeIs222222555555566666669999999")
                 {
                     document.getElementById("pin").style.display = "block";
                 document.getElementById("pin-n").style.display = "none";
